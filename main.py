@@ -40,7 +40,7 @@ def increase_font(event):
 def decrease_font(event):
     current_size = text.cget("font").split()[-1]  # Get current font size
     new_size = int(current_size) - 2  # Decrease font size by 2
-    if new_size > 5:  # Ensure font size doesn't go too small
+    if new_size > 10:  # Ensure font size doesn't go too small
         text.config(font=("Helvetica", new_size))  # Update font size
 
 def quit():
@@ -73,12 +73,13 @@ filemenu.add_command(label="Quit", command=root.quit)
 menubar.add_cascade(label="File", menu=filemenu)
 
 root.config(menu=menubar)
+root.configure(background='black')
 
 
 root.bind("<Control-s>", lambda event: saveFile())
 
 # Bind Ctrl + + to increase font size
-root.bind("<Control-plus>", increase_font)
+root.bind("<Control-equal>", increase_font)
 
 # Bind Ctrl + - to decrease font size
 root.bind("<Control-minus>", decrease_font)
