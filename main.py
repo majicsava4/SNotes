@@ -8,7 +8,7 @@ def newFile():
     text.delete(0.0, END)
 
 def saveFile():
-    global filename 
+    global filename
     if filename is None:
         saveAs()
     else:
@@ -17,8 +17,10 @@ def saveFile():
             f.write(t)
     
 def saveAs():
+    global filename
     f = filedialog.asksaveasfile(mode='w', defaultextension='.txt')
     if f is not None:
+        filename = f.name
         t = text.get(0.0, END)
         try:
             f.write(t.rstrip())
@@ -52,7 +54,7 @@ root.title('SNotes')
 root.minsize(width=400,height=400)
 root.maxsize(width=400,height=400)
 
-text = Text(root, width=50, height=20, font=("Helvetica", 12), wrap=WORD, bg="#000000", fg="#00FFFF", insertbackground="#00FFFF")
+text = Text(root, width=50, height=20, font=("Helvetica", 12), wrap=WORD, bg="#000000", fg="#00FFFF", insertbackground="#00FFFF", undo = True)
 text.pack()
 
 # Create a vertical scrollbar
