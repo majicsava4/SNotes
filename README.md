@@ -16,6 +16,7 @@ SNotes is a lightweight and simple text editor built using Python and the Tkinte
   - `Ctrl + =`: Increase font size.
   - `Ctrl + -`: Decrease font size.
   - `Ctrl + q`: Quit the application.
+  - `Ctrl + z`: Undo a change.
   
 
 ## Installation
