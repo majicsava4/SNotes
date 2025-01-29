@@ -80,7 +80,7 @@ root.configure(background='black')
 
 root.bind("<Control-s>", lambda event: saveFile())
 
-# Bind Ctrl + + to increase font size
+# Bind Ctrl + = to increase font size
 root.bind("<Control-equal>", increase_font)
 
 # Bind Ctrl + - to decrease font size
